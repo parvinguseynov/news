@@ -1,0 +1,15 @@
+{% load news_tags %} <!-- загружаем теги -->
+
+<div class="list-group">
+      {% get_categories as categories %} <!-- Передаем данные из загруженного файла get_categories в переменную categories  -->
+      {% for item in categories %}
+      <a href="{% url 'news:category' item.pk %}" class="list-group-item list-group-item-action">{{ item.title }}</a>
+      {% endfor %}
+
+</div>
+
+<br>
+
+{% comment %}
+{% show_categories %}
+{% endcomment %}
